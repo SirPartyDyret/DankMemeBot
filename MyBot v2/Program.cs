@@ -27,7 +27,7 @@ namespace MyBot_v2
             
             commands = new CommandService();
 
-            string token = "";
+            string token = "MjQ2MjEwMTQ0MzE1MjQ0NTQ0.CxXFbg.14C3jqkIhs9a9DDyj6Ay2bqkf18";
 
             await InstallCommands();
 
@@ -45,15 +45,13 @@ namespace MyBot_v2
                 await dmchannel.SendMessageAsync($"Welcome to {user.Guild.ToString()}, {user.Mention.ToString()}");
             };
 
-            
-
             await Task.Delay(-1);
         }
 
         public async Task InstallCommands()
         {
             client.MessageReceived += HandleCommand;
-            await commands.AddModules(Assembly.GetEntryAssembly());
+            await commands.AddModulesAsync(Assembly.GetEntryAssembly());
         }
 
         public async Task HandleCommand(SocketMessage messageParam)
@@ -67,7 +65,7 @@ namespace MyBot_v2
             {
                 var context = new CommandContext(client, message);
 
-                var result = await commands.Execute(context, argPos);
+                var result = await commands.ExecuteAsync(context, argPos);
                 if (!result.IsSuccess)
                     await message.Channel.SendMessageAsync(result.ErrorReason);
             }
