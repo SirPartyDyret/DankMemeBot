@@ -144,3 +144,76 @@ C:\Users\MortenNielsen\Documents\Visual Studio 2017\Projects\MyBot v2\MyBot v2\b
 C:\Users\MortenNielsen\Documents\Visual Studio 2017\Projects\MyBot v2\MyBot v2\obj\Debug\MyBot v2.csprojResolveAssemblyReference.cache
 C:\Users\MortenNielsen\Documents\Visual Studio 2017\Projects\MyBot v2\MyBot v2\obj\Debug\MyBot v2.exe
 C:\Users\MortenNielsen\Documents\Visual Studio 2017\Projects\MyBot v2\MyBot v2\obj\Debug\MyBot v2.pdb
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\Gifs\Admin_Kicks_User.gif
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\TwitchEmotes\4Head.jpg
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\TwitchEmotes\BabyRage.jpg
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\TwitchEmotes\BibleThump.jpg
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\TwitchEmotes\CiGrip.png
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\TwitchEmotes\CoolCat.jpg
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\TwitchEmotes\DansGame.jpg
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\TwitchEmotes\EleGiggle.jpg
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\TwitchEmotes\FeelsAmazingMan.png
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\TwitchEmotes\FeelsBadMan.png
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\TwitchEmotes\FeelsGoodMan.png
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\TwitchEmotes\haHAA.png
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\TwitchEmotes\Kappa.jpg
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\TwitchEmotes\KappaPride.jpg
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\TwitchEmotes\Keepo.jpg
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\TwitchEmotes\KKona.png
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\TwitchEmotes\LUL.png
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\TwitchEmotes\MingLee.jpg
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\TwitchEmotes\ResidentSleeper.jpg
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\TwitchEmotes\SMOrc.jpg
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\TwitchEmotes\swastika.png
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\TwitchEmotes\TriHard.jpg
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\TwitchEmotes\VapeNation.png
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\TwitchEmotes\VoHiYo.jpg
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\TwitchEmotes\WutFace.jpg
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\MyBot v2.exe.config
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\MyBot v2.exe
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\MyBot v2.pdb
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\Discord.Addons.InteractiveCommands.dll
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\Discord.Addons.WS4NetCompatibility.dll
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\Discord.Net.Commands.dll
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\Discord.Net.Core.dll
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\Discord.Net.Rest.dll
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\Discord.Net.Rpc.dll
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\Discord.Net.WebSocket.dll
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\Microsoft.Win32.Primitives.dll
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\Newtonsoft.Json.dll
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\SuperSocket.ClientEngine.dll
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\System.AppContext.dll
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\System.Collections.Immutable.dll
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\System.Console.dll
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\System.Globalization.Calendars.dll
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\System.Interactive.Async.dll
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\System.IO.Compression.dll
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\System.IO.Compression.ZipFile.dll
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\System.IO.FileSystem.dll
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\System.IO.FileSystem.Primitives.dll
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\System.Net.Http.dll
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\System.Net.NameResolution.dll
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\System.Net.Security.dll
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\System.Net.Sockets.dll
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\System.Net.WebSockets.Client.dll
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\System.Net.WebSockets.dll
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\System.Runtime.Serialization.Primitives.dll
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\System.Security.Cryptography.Algorithms.dll
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\System.Security.Cryptography.Encoding.dll
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\System.Security.Cryptography.Primitives.dll
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\WebSocket4Net.dll
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\Discord.Net.Commands.xml
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\Discord.Net.Core.xml
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\Discord.Net.Rest.xml
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\Discord.Net.Rpc.xml
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\Discord.Net.WebSocket.xml
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\Newtonsoft.Json.xml
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\System.Collections.Immutable.xml
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\System.Interactive.Async.xml
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\obj\Debug\MyBot v2.csprojResolveAssemblyReference.cache
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\obj\Debug\MyBot v2.exe
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\obj\Debug\MyBot v2.pdb

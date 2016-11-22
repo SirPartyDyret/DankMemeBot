@@ -17,6 +17,15 @@ namespace MyBot_v2
 
     //TODO: kill me, userstats 
 
+    public class LookUps : ModuleBase
+    {
+        [Command("diablo")]
+        public async Task DiabloLookUpAsync([Summary("The user's battletag")]string battleTag, [Summary("The numbers after the pound")]string pound, [Summary("The realm the given user is on")]string realm)
+        {
+            await ReplyAsync($"http://{realm}.battle.net/d3/en/profile/{battleTag}-{pound}/");
+        }
+    }
+
     public class RandomShitposts : ModuleBase
     { 
 
