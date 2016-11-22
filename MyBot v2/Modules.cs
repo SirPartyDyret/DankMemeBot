@@ -17,75 +17,87 @@ namespace MyBot_v2
 
     //TODO: kill me, userstats 
 
-    public class LookUps : ModuleBase
+    public class LookUps : ModuleBase                                                       //  Our Lookup Module
     {
-        [Command("diablo")]
-        public async Task DiabloLookUpAsync([Summary("The user's battletag")]string battleTag, [Summary("The numbers after the pound")]string pound, [Summary("The realm the given user is on")]string realm)
+        [Command("diablo"), Summary("A tool to look up diablo players on battle.net")]
+        public async Task DiabloLookUpAsync([Summary("The user's battletag")]string battleTag, [Summary("The realm the given user is on")]string realm)
         {
-            await ReplyAsync($"http://{realm}.battle.net/d3/en/profile/{battleTag}-{pound}/");
+            ///  Changes the '#' in the battletag to a '-' in order to work with the url syntax
+
+            char[] battleTagWithPound = battleTag.ToCharArray();                            //  Converts the input string to a char array
+
+            for (int i = 0; i < battleTagWithPound.Length; i++)                             //  Loops through the array finding the characters that equal '#' then changing them to '-'
+                if (battleTagWithPound[i] == '#')                                           //  Checks if the char at index [i] is equal to '#'
+                {
+                    battleTagWithPound[i] = '-';                                            //  Changes the char at index [i] to '-' 
+                }
+
+            string newBattleTag = new string(battleTagWithPound);                           //  Instantiates a new string that is the char array
+
+            await ReplyAsync($"http://{realm}.battle.net/d3/en/profile/{newBattleTag}/");   //  Sends the output through the bot
         }
     }
 
-    public class RandomShitposts : ModuleBase
+    public class RandomShitposts : ModuleBase                                                                                                   //   Our shitpost module
     { 
 
-        [Command("goodshit")]
+        [Command("goodshit"), Summary("Posts a spicy meme(right there(right there))")]
         public async Task GoodShitAsync()
         {
-            await ReplyAsync("👌👀👌👀👌👀👌👀👌👀 good shit go౦ԁ sHit👌 thats ✔ some good👌👌shit right👌👌there👌👌👌 right✔there ✔✔");
-            await ReplyAsync("");
+            await ReplyAsync("👌👀👌👀👌👀👌👀👌👀 good shit go౦ԁ sHit👌 thats ✔ some good👌👌shit right👌👌there👌👌👌 right✔there ✔✔");        //  The bot posts text to the channel    
         }
 
-        [Command("jews")]
+        [Command("jews"), Summary("Random anti-semitic thing")]
         public async Task JewsAsync()
         {
-            await ReplyAsync(":regional_indicator_f: :regional_indicator_u: :regional_indicator_c: :regional_indicator_k: " +
+            await ReplyAsync(":regional_indicator_f: :regional_indicator_u: :regional_indicator_c: :regional_indicator_k: " +                   //  The bot posts text to the channel
                              ":regional_indicator_j: :regional_indicator_e: :regional_indicator_w: :regional_indicator_s: ");
-            await Context.Channel.SendFileAsync("TwitchEmotes/swastika.png");
+            await Context.Channel.SendFileAsync("TwitchEmotes/swastika.png");                                                                   //  The bot sends a file to the channel
         }
 
-        [Command("tilt")]
+        [Command("tilt"), Summary("//////")]
         public async Task TiltAsync()
         {
-            await ReplyAsync("/|/|orte/|/");
+            await ReplyAsync("/|/|orte/|/");                                                                                                    //  The bot posts text to the channel
         }
 
-        [Command("jack")]
+        [Command("jack"), Summary("Yndlings-asiaten")]
         public async Task JackAsync()
         {
-            await Context.Channel.SendFileAsync("TwitchEmotes/MingLee.jpg");
+            await Context.Channel.SendFileAsync("TwitchEmotes/MingLee.jpg");                                                                    //  The bot sends a file to the channel
         }
 
-        [Command("becker")]
+        [Command("becker"), Summary("VoHiYo")]
         public async Task BeckerAsync()
         {
-            await Context.Channel.SendFileAsync("TwitchEmotes/VoHiYo.jpg");
-            await Context.Channel.SendMessageAsync("Weeb");
-            await Context.Channel.SendFileAsync("TwitchEmotes/VoHiYo.jpg");
+            await Context.Channel.SendFileAsync("TwitchEmotes/VoHiYo.jpg");                                                                     //  The bot sends a file to the channel
+            await Context.Channel.SendMessageAsync("Weeb");                                                                                     //  The bot posts text to the channel
+            await Context.Channel.SendFileAsync("TwitchEmotes/VoHiYo.jpg");                                                                     //  The bot sends a file to the channel
         }
 
-        [Command("alex is a stupid")]
+        [Command("alex is a stupid"), Summary("Spicy meme fusion")]
         public async Task TriHardAsync()
         {
-            await Context.Channel.SendFileAsync("TwitchEmotes/TriHard.jpg");
+            await Context.Channel.SendFileAsync("TwitchEmotes/TriHard.jpg");                                                                    //  The bot sends a file to the channel
         }
 
-        [Command("coin")]
+        [Command("coin"), Summary("Coinflip")]
         public async Task CoinflipAsync()
         {
-            string[] headsTails = {"Heads", "Tails"};
-            Random random = new Random();
-            int randomNumber = random.Next(headsTails.Length);
-            await ReplyAsync(headsTails[randomNumber]);
+            string[] headsTails = {"Heads", "Tails"};                                                                                           //  Creates a string array with two indexes "heads" and "tails"
+            Random random = new Random();                                                                                                       //  Creates a new random
+            int randomNumber = random.Next(headsTails.Length);                                                                                  //  Instantiates an int that uses the Next property of the random to store a random number between 0 and the length of our string array
+            await ReplyAsync(headsTails[randomNumber]);                                                                                         //  The bot sends a string at the index equal to our randomNumber to the channel
         }
     }
 
     public class Info : ModuleBase
     {
-        [Command("help")]
+        //  Doesn't work
+        [Command("help"), Summary("A help command, currently WIP")]
         public async Task HelpAsync()
         {
-            await ReplyAsync("Work in progress");
+            await ReplyAsync("Work in progress");                                                                                               //  Sends text to the channel
         }
 
         [Command("say"), Summary("Echoes a message.")]
@@ -213,7 +225,7 @@ namespace MyBot_v2
             }
         }
 
-        [Command("timein")]
+        [Command("timein"), Summary("Timeins a user")]
         public async Task TimeinAsync([Summary("The user to timein")]IGuildUser target)
         {
             IRole timedOutRole = Context.Guild.GetRole(248074293211037696);
@@ -230,7 +242,7 @@ namespace MyBot_v2
         }
 
         //  Does not work as of right now
-        [Command("purge")]
+        [Command("purge"), Summary("Purges the chat, currently WIP.")]
         public async Task PurgeAsync([Summary("The number of messages to delete")]int numberOfMessagesToDel)
         {
             //IEnumerable<IMessage> messages = Context.Channel.GetMessagesAsync(numberOfMessagesToDel) as IEnumerable<IMessage>;

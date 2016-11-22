@@ -217,3 +217,4 @@ C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\System.Intera
 C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\obj\Debug\MyBot v2.csprojResolveAssemblyReference.cache
 C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\obj\Debug\MyBot v2.exe
 C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\obj\Debug\MyBot v2.pdb
+C:\Users\MortenNielsen\Source\Repos\DankMemeBot\MyBot v2\bin\Debug\System.Xml.ReaderWriter.dll
