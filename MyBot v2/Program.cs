@@ -27,7 +27,7 @@ namespace MyBot_v2
             
             commands = new CommandService();
 
-            string token = "MjQ2MjEwMTQ0MzE1MjQ0NTQ0.CxXFbg.14C3jqkIhs9a9DDyj6Ay2bqkf18";
+            string token = "";
 
             await InstallCommands();
 
