@@ -101,40 +101,39 @@ namespace MyBot_v2
         }
 
         [Command("say"), Summary("Echoes a message.")]
-        public async Task SayAsync([Summary("The text to echo")] string echo){await ReplyAsync(echo);}
+        public async Task SayAsync([Summary("The text to echo")] string echo){await ReplyAsync(echo);}                                          //  Sends the input parameter 'echo' as text to the channel
 
         [Command("info"), Alias("about", "stats"), Summary("Gets info about the bot.")]
-        public async Task InformationAsync()
+        public async Task InformationAsync()                                                                                                    //  We start the function
         {
-            var application = await Context.Client.GetApplicationInfoAsync();
-            await ReplyAsync(
-                $"{Format.Bold("Info")}\n" +
-                $"- Author: {application.Owner.Username} (ID {application.Owner.Id})\n" +
-                $"- Library: Discord.Net ({DiscordConfig.Version})\n" +
-                $"- Uptime: {GetUpTime()}\n\n" +
+            var application = await Context.Client.GetApplicationInfoAsync();                                                                   //  Stores the application info in a variable called 'application'
+            await ReplyAsync(                                                                                                                   //  Initializes the ReplyAsync function which sends a string out as text to the channel
+                $"{Format.Bold("Info")}\n" +                                                                                                    //  We write "Info" in bold format, then we concatenate a string onto that
+                $"- Author: {application.Owner.Username} (ID {application.Owner.Id})\n" +                                                       //  We write the user name of the owner of the application and their ID, then concatenate a string onto that
+                $"- Library: Discord.Net ({DiscordConfig.Version})\n" +                                                                         //  We write the version of the library, then concatenate a string onto that
+                $"- Uptime: {GetUpTime()}\n\n" +                                                                                                //  We write the Uptime of the program, ie. time elapsed since startup of the bot, by calling a self-made function, then concatenate a string onto that
 
-                $"{Format.Bold("Stats")}\n" +
-                $"- Heap Size: {GetHeapSize()} MB\n" +
-                $"- Guilds: {(Context.Client as DiscordSocketClient).Guilds.Count}\n" +
-                $"- Channels: {(Context.Client as DiscordSocketClient).Guilds.Sum(g => g.Channels.Count)}" +
-                $"- Users: {(Context.Client as DiscordSocketClient).Guilds.Sum(g => g.Users.Count)}"
-                );
+                $"{Format.Bold("Stats")}\n" +                                                                                                   //  We write "Stats" in bold format, then concatenate a string onto that
+                $"- Heap Size: {GetHeapSize()} MB\n" +                                                                                          //  We write the heap size, ie. the amount of memory used by the program, by calling a selfmade function, then we concatenate a string onto that
+                $"- Guilds: {(Context.Client as DiscordSocketClient).Guilds.Count}\n" +                                                         //  We write how many guilds the bot is a part of, then concatenate a string onto that
+                $"- Channels: {(Context.Client as DiscordSocketClient).Guilds.Sum(g => g.Channels.Count)}" +                                    //  We write how many channels the bot is active in, then concatenate a string onto that
+                $"- Users: {(Context.Client as DiscordSocketClient).Guilds.Sum(g => g.Users.Count)}"                                            //  We write how many users the bot services.
+                );                                                                                                                              //  We end the function
         }
 
         [Command("uptime"), Summary("How long the bot has been online for")]
-        public async Task UptimeAsync()
+        public async Task UptimeAsync()                             
         {
-            await ReplyAsync(
-                             $"{Format.Bold("Uptime")}\n" +
-                             $"{GetUpTime()}"
+            await ReplyAsync(                                                                                                   
+                             $"{Format.Bold("Uptime")}\n" +                                                                                     //  We write "uptime" in bold format, then concatenate a string onto that
+                             $"{GetUpTime()}"                                                                                                   //  We call the uptime function to write it.
                              );
         }
         
 
-        private static string GetUpTime()
-            => (System.DateTime.Now - Process.GetCurrentProcess().StartTime).ToString(@"dd\.hh\:mm\:ss");
+        private static string GetUpTime() => (System.DateTime.Now - Process.GetCurrentProcess().StartTime).ToString(@"dd\.hh\:mm\:ss");         //  Makes a function which takes the current time and subtracts the starttime of the currentprocess from that, then converts it to a string in a dd\hh\mm\ss format
 
-        private static string GetHeapSize() => System.Math.Round(System.GC.GetTotalMemory(true) / (1024.0 * 1024.0), 2).ToString();
+        private static string GetHeapSize() => System.Math.Round(System.GC.GetTotalMemory(true) / (1024.0 * 1024.0), 2).ToString();             //  Makes a function which takes the total memory and divides it by 1024 * 1024 to get the right format, then tells it that it should have 2 decimal points, then converts it to a string
     }
 
     public class AdminModule : ModuleBase
@@ -142,52 +141,52 @@ namespace MyBot_v2
         [Command("kick"), Summary("Kicks a user."), RequirePermission(GuildPermission.KickMembers)]
         public async Task KickAsync([Summary("The user to kick.")]IGuildUser target, [Optional]string reason)
         {
-            IDMChannel dmchannel = await target.CreateDMChannelAsync();
-            ITextChannel logchannel = await Context.Guild.GetTextChannelAsync(246572485292720139) as ITextChannel;
+            IDMChannel dmchannel = await target.CreateDMChannelAsync();                                                                         //  Stores a dmchannel with the target
+            ITextChannel logchannel = await Context.Guild.GetTextChannelAsync(246572485292720139) as ITextChannel;                              //  Stores the logchannel
 
-            await dmchannel.SendMessageAsync($"You have been kicked from {target.Guild.ToString()}.");
-            await logchannel.SendMessageAsync($"USER: {target} ID: {target.Id} has been KICKED.");
+            await dmchannel.SendMessageAsync($"You have been kicked from {target.Guild.ToString()}.");                                          //  Sends a message in the dmchannel
+            await logchannel.SendMessageAsync($"USER: {target} ID: {target.Id} has been KICKED.");                                              //  Sends text to the logchannel
 
 
-            if (!string.IsNullOrWhiteSpace(reason))
+            if (!string.IsNullOrWhiteSpace(reason))                                                                                             //  Checks to see if the input parameter 'reason' is null or whitespace
             {
-                await dmchannel.SendMessageAsync($"Reason: {reason}.");
-                await logchannel.SendMessageAsync($"REASON: {reason}.");
+                await dmchannel.SendMessageAsync($"Reason: {reason}.");                                                                         //  Sends the reason parameter to the dmchannel
+                await logchannel.SendMessageAsync($"REASON: {reason}.");                                                                        //  Sends the reason parameter to the logchannel        
             }
 
-            await dmchannel.SendMessageAsync($"If you would like to appeal this kick, send a message to: {Context.User.Mention}.");
-            await dmchannel.SendMessageAsync(Format.Italics("this is an automated message."));
+            await dmchannel.SendMessageAsync($"If you would like to appeal this kick, send a message to: {Context.User.Mention}.");             //  Sends text to the dmchannel
+            await dmchannel.SendMessageAsync(Format.Italics("this is an automated message."));                                                  //  Sends text to the dmchannel in the italics format
 
 
-            await target.KickAsync();
-            await Context.Channel.SendMessageAsync($"Kicked user: {target}.");
-            await Context.Channel.SendFileAsync("Gifs/Admin_Kicks_User.gif");
+            await target.KickAsync();                                                                                                           //  Calls the KickAsync function on the target
+            await Context.Channel.SendMessageAsync($"Kicked user: {target}.");                                                                  //  Sends a message to the channel to say that the user has been kicked
+            await Context.Channel.SendFileAsync("Gifs/Admin_Kicks_User.gif");                                                                   //  Sends a gif to the channel
         }
 
         [Command("ban"), Summary("Bans a user."), RequirePermission(GuildPermission.BanMembers)]
         public async Task BanAsync([Summary("The user to ban")]IGuildUser target, [Summary("The reason for one such ban")] string reason)
         {
-            IDMChannel dmchannel = await target.CreateDMChannelAsync();
-            ITextChannel logchannel = await Context.Guild.GetTextChannelAsync(246572485292720139) as ITextChannel;
+            IDMChannel dmchannel = await target.CreateDMChannelAsync();                                                                         //  Stores a dmchannel with the target
+            ITextChannel logchannel = await Context.Guild.GetTextChannelAsync(246572485292720139) as ITextChannel;                              //  Gets the logchannel, then stores it
 
-            if (!string.IsNullOrWhiteSpace(reason))
+            if (!string.IsNullOrWhiteSpace(reason))                                                                                             //  Checks to see if the input parameter 'reason' is null or whitespace                           
             {
-                await Context.Channel.SendMessageAsync(
-                                        $"Banned user: {target}.\n" +
-                                        $"Reason: {reason}");
-                await dmchannel.SendMessageAsync($"You have been banned from {target.Guild.ToString()}.");
-                await dmchannel.SendMessageAsync($"Reason: {reason}.");
-                await dmchannel.SendMessageAsync($"If you would like to appeal this ban, send a message to: {Context.User.Mention}.");
-                await dmchannel.SendMessageAsync(Format.Italics("this is an automated message."));
-                await logchannel.SendMessageAsync($"USER: {target} ID: {target.Id} has been BANNED.\nREASON: {reason}.");
+                await Context.Channel.SendMessageAsync(                                                                                         
+                                        $"Banned user: {target}.\n" +                                                                           //  Sends the banned user to the channel
+                                        $"Reason: {reason}");                                                                                   //  Sends the reason the channel
+                await dmchannel.SendMessageAsync($"You have been banned from {target.Guild.ToString()}.");                                      //  Sends text to the dmchannel
+                await dmchannel.SendMessageAsync($"Reason: {reason}.");                                                                         //  Sends text to the dmchannel  
+                await dmchannel.SendMessageAsync($"If you would like to appeal this ban, send a message to: {Context.User.Mention}.");          //  Sends text to the dmchannel
+                await dmchannel.SendMessageAsync(Format.Italics("this is an automated message."));                                              //  Sends text to the dmchannel
+                await logchannel.SendMessageAsync($"USER: {target} ID: {target.Id} has been BANNED.\nREASON: {reason}.");                       //  Sends text to the logchannel
             }
             try
             {
-                await Context.Guild.AddBanAsync(target);
+                await Context.Guild.AddBanAsync(target);                                                                                        //  Tries to add the target to the server's ban list
             }
             catch
             {
-                await Context.Channel.SendMessageAsync("Error. Most likely I don't have sufficient permissions");
+                await Context.Channel.SendMessageAsync("Error. Most likely I don't have sufficient permissions");                               //  If the ban fails it will send this text to the channel
             }
         }
 
@@ -195,49 +194,49 @@ namespace MyBot_v2
         [Command("timeout"), Summary("Timeouts a user"), RequirePermission(GuildPermission.ManageRoles)]
         public async Task TimeoutAsync([Summary("The user to timeout")]IGuildUser target, [Summary("Amount of seconds to timeout"), Optional]int seconds)
         {
-            IRole timedOutRole = Context.Guild.GetRole(248074293211037696);
-            IRole welcomeRole = Context.Guild.GetRole(248434734240104459);
-            IDMChannel dmchannel = await target.CreateDMChannelAsync();
-            ITextChannel logchannel = await Context.Guild.GetTextChannelAsync(246572485292720139) as ITextChannel;
+            IRole timedOutRole = Context.Guild.GetRole(248074293211037696);                                                                     //  Stores a role, that serves as the timed out role
+            IRole welcomeRole = Context.Guild.GetRole(248434734240104459);                                                                      //  Stores a different role that is assigned to every newcomer in the server to get around discord's @everyone role
+            IDMChannel dmchannel = await target.CreateDMChannelAsync();                                                                         //  Stores a dmchannel with the target
+            ITextChannel logchannel = await Context.Guild.GetTextChannelAsync(246572485292720139) as ITextChannel;                              //  Gets the logchannel and stores it
 
-            seconds = seconds * 1000;
+            seconds *= 1000;                                                                                                                    //  Takes the seconds parameter and converts it to miliseconds
 
-            await target.AddRolesAsync(timedOutRole);
-            await target.RemoveRolesAsync(welcomeRole);
-
-            if (seconds != 0)
+            await target.AddRolesAsync(timedOutRole);                                                                                           //  Assigns the timed out role to the target
+            await target.RemoveRolesAsync(welcomeRole);                                                                                         //  Removes the welcome role from the target
+            
+            if (seconds != 0)                                                                                                                   //  Checks to see if our seconds parameter isn't 0
             {
-                await dmchannel.SendMessageAsync($"You have been timed out from {target.Guild.ToString()} for {seconds / 1000} seconds.");
-                await logchannel.SendMessageAsync($"USER: {target} ID: {target.Id} has been timed out for {seconds/1000} seconds.");
+                await dmchannel.SendMessageAsync($"You have been timed out from {target.Guild.ToString()} for {seconds / 1000} seconds.");      //  Sends a message to the dmchannel
+                await logchannel.SendMessageAsync($"USER: {target} ID: {target.Id} has been timed out for {seconds/1000} seconds.");            //  Sends a message to the logchannel
 
-                await Task.Delay(seconds).ConfigureAwait(true);
+                await Task.Delay(seconds).ConfigureAwait(true);                                                                                 //  Stops the task for as many miliseconds as the seconds paramater is equal to. This doesn't work because it makes me unable to call any other functions
 
-                await target.AddRolesAsync(welcomeRole);
-                await target.RemoveRolesAsync(timedOutRole);
+                await target.AddRolesAsync(welcomeRole);                                                                                        //  Assigns the welcome role to the target
+                await target.RemoveRolesAsync(timedOutRole);                                                                                    //  Removes the timed out role from the target
 
-                await dmchannel.SendMessageAsync($"You are no longer timed out from {target.Guild.ToString()}.");
-                await logchannel.SendMessageAsync($"USER: {target} ID: {target.Id} is no longer timed out.");
+                await dmchannel.SendMessageAsync($"You are no longer timed out from {target.Guild.ToString()}.");                               //  Sends text to the dmchannel
+                await logchannel.SendMessageAsync($"USER: {target} ID: {target.Id} is no longer timed out.");                                   //  Sends text to the l
             }
-            else
+            else                                                                                                                                //  Else
             {
-                await dmchannel.SendMessageAsync($"You have been timed out from {target.Guild.ToString()} for an unspecified amount of time.");
-                await logchannel.SendMessageAsync($"USER: {target} ID: {target.Id} has been timed out for an unspecified amount of time.");
+                await dmchannel.SendMessageAsync($"You have been timed out from {target.Guild.ToString()} for an unspecified amount of time."); //  Sends a message to the dmchannel
+                await logchannel.SendMessageAsync($"USER: {target} ID: {target.Id} has been timed out for an unspecified amount of time.");     //  Sends a message to the logchannel
             }
         }
 
         [Command("timein"), Summary("Timeins a user")]
         public async Task TimeinAsync([Summary("The user to timein")]IGuildUser target)
         {
-            IRole timedOutRole = Context.Guild.GetRole(248074293211037696);
-            IRole welcomeRole = Context.Guild.GetRole(248434734240104459);
-            IDMChannel dmchannel = await target.CreateDMChannelAsync();
-            ITextChannel logchannel = await Context.Guild.GetTextChannelAsync(246572485292720139) as ITextChannel;
+            IRole timedOutRole = Context.Guild.GetRole(248074293211037696);                                                                     //  Stores the timed out role
+            IRole welcomeRole = Context.Guild.GetRole(248434734240104459);                                                                      //  Stores the welcome role
+            IDMChannel dmchannel = await target.CreateDMChannelAsync();                                                                         //  Creates a dmchannel with the target and stores it
+            ITextChannel logchannel = await Context.Guild.GetTextChannelAsync(246572485292720139) as ITextChannel;                              //  Gets the logchannel and stores it
 
-            await target.RemoveRolesAsync(timedOutRole);
-            await target.AddRolesAsync(welcomeRole);
+            await target.RemoveRolesAsync(timedOutRole);                                                                                        //  Removes the timed out role from the target
+            await target.AddRolesAsync(welcomeRole);                                                                                            //  Assigns the welcome role to the target
 
-            await dmchannel.SendMessageAsync($"You are no longer timed out from {target.Guild.ToString()}.");
-            await logchannel.SendMessageAsync($"USER: {target} ID: {target.Id} is no longer timed out.");
+            await dmchannel.SendMessageAsync($"You are no longer timed out from {target.Guild.ToString()}.");                                   //  Sends a message to the dmchannel        
+            await logchannel.SendMessageAsync($"USER: {target} ID: {target.Id} is no longer timed out.");                                       //  Sends a message to the logchannel
 
         }
 
