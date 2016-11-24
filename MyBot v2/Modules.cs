@@ -36,9 +36,24 @@ namespace MyBot_v2
 
             await ReplyAsync($"http://{realm}.battle.net/d3/en/profile/{newBattleTag}/");   //  Sends the output through the bot
         }
+
+        [Command("google"), Summary("A tool to do google searches")]
+        public async Task GoogleSearchAsync([Summary("The search word(s)"), Remainder]string search)                                            //  Function, remainder is an attribute that tells the backend that the parameter can be with spaces
+        {
+            char[] searchToUrl = search.ToCharArray();                                                                                          //  Converts the input string to a char array
+
+            for (int i = 0; i < searchToUrl.Length; i++)                                                                                        //  Loops through the array finding the characters that equal ' ' then changing them to '+'
+                if (searchToUrl[i] == ' ')                                                                                                      //  Checks if the char at index [i] is equal to ' '
+                {
+                    searchToUrl[i] = '+';                                                                                                       //  Changes the char at index [i] to '+' 
+                }
+
+            search = new string(searchToUrl);                                                                                                   //  Changes the string to be the char array
+            await ReplyAsync($"https://www.google.dk/search?q={search}");                                                                       //  Sends the output through the bot
+        }
     }
 
-    public class RandomShitposts : ModuleBase                                                                                                   //   Our shitpost module
+    public class RandomShitposts : ModuleBase                                                                                                   //  Our shitpost module
     { 
 
         [Command("goodshit"), Summary("Posts a spicy meme(right there(right there))")]
@@ -97,7 +112,7 @@ namespace MyBot_v2
         [Command("help"), Summary("A help command, currently WIP")]
         public async Task HelpAsync()
         {
-            await ReplyAsync("Work in progress");                                                                                               //  Sends text to the channel
+            await ReplyAsync("");                                                                                                               //  Sends text to the channel
         }
 
         [Command("say"), Summary("Echoes a message.")]

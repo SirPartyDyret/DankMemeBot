@@ -27,7 +27,7 @@ namespace MyBot_v2
             
             commands = new CommandService();                                                                                //  Instantiates the commands
 
-            string token = "";                                                                                              //  Our token gets stored
+            string token = "";                                   //  Our token gets stored
 
             await InstallCommands();                                                                                        //  Call the InstallCommands function
 
